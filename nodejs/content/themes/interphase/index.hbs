@@ -1,0 +1,51 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+
+{{! The big featured header }}
+<header id="header" class="{{#if @blog.cover}}">
+    <h1><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
+    {{navigation}}
+</header>
+
+<!-- Banner -->
+<section id="banner" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
+    <h2>{{@blog.description}}</h2>
+</section>
+
+<!-- One -->
+<section id="one" class="wrapper style1 align-center">
+    <div class="container">
+        <header>
+            <h2>Web development</h2>
+            <p>Available for frontend, backend and hosting work.</p>
+        </header>
+        <div class="row 200%">
+            <section class="4u 12u$(small)">
+                <i class="icon big rounded fa-clock-o"></i>
+                <p>Good and speedy deliveries. Expect your project to be handled with care.</p>
+            </section>
+            <section class="4u 12u$(small)">
+                <i class="icon big rounded fa-comments"></i>
+                <p>Open and easy communication. I'm compatible with your channels.</p>
+            </section>
+            <section class="4u$ 12u$(small)">
+                <i class="icon big rounded fa-code"></i>
+                <p>Great believer in the power of open source, <a href="https://github.com/DeviaVir?tab=repositories" target="_blank">check out</a> some of my work to get a feel.</p>
+            </section>
+        </div>
+    </div>
+</section>
+
+{{! The main content area on the homepage }}
+<section id="two" class="wrapper style2 align-center">
+    <div class="container">
+        <header>
+            <h2>Portfolio</h2>
+            <p>Recently finished projects.</p>
+        </header>
+        <div class="row">
+            {{! The tag below includes the post loop - partials/loop.hbs }}
+            {{> "loop"}}
+        </div>
+    </div>
+</section>
