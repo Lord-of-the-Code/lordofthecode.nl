@@ -1,0 +1,51 @@
+{% extends "../layouts/default.twig" %}
+
+{% block content %}
+<div id="main">
+
+<!-- Introduction -->
+	<section id="intro" class="main">
+		<div class="spotlight">
+			<div class="content">
+				<header class="major">
+					<h2>Essentials</h2>
+				</header>
+				{% if (user is defined) and (user.canAccessKeystone) %}
+					<p>
+						<a href="/keystone" class="btn btn-lg btn-primary">Open the Admin UI</a>
+					</p>
+				{% endif %}
+				<p>
+					For all of your cloud hosting and back- and frontend development projects.
+				</p>
+			</div>
+			<span class="image"><img src="images/pic01.jpg" alt="" /></span>
+		</div>
+	</section>
+
+<!-- First Section -->
+	<section id="first" class="main special">
+		<header class="major">
+			<h2>Skills</h2>
+		</header>
+		<ul class="features">
+			<li>
+				<span class="icon major style1 fa-code"></span>
+				<h3>Back- and Frontend</h3>
+				<p>Web development is one of our essential tools and required to be able to single-handedly deliver complete projects.</p>
+			</li>
+			<li>
+				<span class="icon major style3 fa-copy"></span>
+				<h3>Cloud Infrastructure</h3>
+				<p>When it comes to cloud infrastructure and hosting we can bring around 8 years of experience to the table, and are able to offer consultancy and our know-how.</p>
+			</li>
+			<li>
+				<span class="icon major style5 fa-diamond"></span>
+				<h3>Consultancy</h3>
+				<p>Feel free to reach out with any inquiries regarding any type of technical project you may have, we look forward to hear from you!</p>
+			</li>
+		</ul>
+	</section>
+
+</div>
+{% endblock %}

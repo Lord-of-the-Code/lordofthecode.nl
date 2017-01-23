@@ -1,0 +1,47 @@
+{% extends "../layouts/default.twig" %}
+
+{% block intro %}
+	<div class="container">
+		<h1>Portfolio</h1>
+	</div>
+{% endblock %}
+
+{% block content %}
+	<div class="container">
+		{% if galleries.length %}
+			<section id="one" class="wrapper style1 align-center">
+				<div class="container">
+					<div class="row 200%">
+						{% for gallery in galleries %}
+							<section class="4u 12u$(small)">
+								<h2>{{ gallery.name }}</h2>
+								{% if gallery.publishedDate %}
+									<p>{{ gallery.publishedDate|date("d M Y") }}</p>
+								{% endif %}
+								<img src="/files/{{ gallery.heroImage.filename }}" class="img-rounded" width="150" />
+								{{ gallery.content }}
+								{% if gallery.url %}
+								<footer>
+									<ul class="actions">
+										<li>
+											<a href="{{ gallery.url }}" class="button alt big">Learn More</a>
+										</li>
+									</ul>
+								</footer>
+								{% endif %}
+							</section>
+						{% endfor %}
+					</div>
+				</div>
+			</section>
+		{% else %}
+			<section id="one" class="wrapper style1 align-center">
+				<div class="container">
+					<header>
+						<h2 class="text-muted">There are no portfolios yet.</h2>
+					</header>
+				</div>
+			<section id="one" class="wrapper style1 align-center">
+		{% endif %}
+	</div>
+{% endblock %}
