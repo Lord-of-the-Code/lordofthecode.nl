@@ -10,19 +10,26 @@ var Gallery = new keystone.List('Gallery', {
 	autokey: { from: 'name', path: 'key', unique: true },
 });
 
+var GalleryStorage = new keystone.Storage({
+	adapter: keystone.Storage.Adapters.FS,
+	fs: {
+		path: 'public/files',
+		publicPath: '/files',
+	},
+});
+
 Gallery.add({
 	name: { type: String, required: true },
 	publishedDate: { type: Date, default: Date.now },
 	heroImage: {
-		type: Types.LocalFile,
-		dest: 'public/files',
-		prefix: '/files/',
-		filename: function(item, file){
-			return item.id + '.' + file.extension
-		}
+		type: Types.File,
+		storage: GalleryStorage,
+		filename: function (item, file) {
+			return item.id + '.' + file.extension;
+		},
 	},
 	content: { type: Types.Html, wysiwyg: true },
-	url: { type: Types.Url }
+	url: { type: Types.Url },
 });
 
 Gallery.register();
