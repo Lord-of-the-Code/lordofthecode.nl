@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "keystone": "^4.0.0-beta.7",
+    "keystone": "deviavir/keystone#patch-1",
     "async": "^1.5.0",
     "lodash": "^4.13.1",
     "twig": "^0.9.5",
