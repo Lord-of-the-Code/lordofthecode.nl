@@ -9,7 +9,7 @@ web:
   volumes:
     - ./data/files:/usr/src/app/public/files
   environment:
-    - VIRTUAL_HOST=lordofthecode.nl/www.lordofthecode.nl
+    - VIRTUAL_HOST=lordofthecode.nl,www.lordofthecode.nl
     - MONGO_URI=mongodb://db/lotc
     - PORT=80
     - DOMAIN=www.lordofthecode.nl
