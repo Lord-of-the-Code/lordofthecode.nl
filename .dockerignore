@@ -1,2 +1,9 @@
 node_modules
 npm-debug.log
+.git
+.editorconfig
+.gitignore
+docker-compose.yml
+Dockerfile
+LICENSE.md
+Procfile

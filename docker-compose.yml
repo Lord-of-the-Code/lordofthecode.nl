@@ -13,8 +13,9 @@ web:
     - MONGO_URI=mongodb://db/lotc
     - PORT=80
     - DOMAIN=www.lordofthecode.nl
+    - COOKIE_SECRET=some-nice-cookie-secret
 db:
   restart: always
-  image: mongo:3.0.2
+  image: mongo:3
   volumes:
     - ./data/db:/data/db
